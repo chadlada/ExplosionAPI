@@ -9,20 +9,20 @@ namespace ExplosionAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ReverseStringController : ControllerBase
+    public class MumblingController : ControllerBase
     {
         [HttpGet]
-        public string ReverseString(string word = "World")
+        public string Mumbling(string str)
         {
-            return string.Concat(word.ToArray().Reverse());
-
+            return "Hey";
         }
     }
 }
 
-// * Create a controller for ReverseString
-//     * Create a new Controller called ReverseStringController
+
+// * Create a controller for mumbling
+//     * Create a new Controller called MumblingController
 //     * This will have one HttpGet method
 //     * The method will accept a string either as a URL parameter or a query parameter. Your choice.
-//     * This endpoint method will reverse the string passed to it, manipulate it according to the kata Reverse String and return the result
+//     * This endpoint method will take the string passed to it, manipulate it according to the kata Mumbling and return the result
 //     * Have your code return the string
