@@ -11,22 +11,27 @@ namespace ExplosionAPI.Controllers
     [ApiController]
     public class ExplosionController : ControllerBase
     {
-        [HttpGet("{str}")]
-        public string Explosion(string str = "1234")  //Why isn't it defaulting when I run in insomnia?
+        [HttpGet("{number}")]
+        public string Explosion(string number = "1234")  //Why isn't it defaulting when I run in insomnia?
         {
+
+            return string.Join("", number.Select(character => new String(character, int.Parse(character.ToString()))));
+            // return string.Join("", numbers.Select(c => new String(c, int.Parse(c.ToString()))));
+
             // var newString = "";
-            // foreach (var number in str)
+            // foreach (var num in number)
             // {
-            //     for (var index = 0; index < number - '0'; index++)
+            //     for (var index = 0; index < num - '0'; index++)
             //     {
-            //         newString += number;
+            //         newString += num;
             //     }
             // }
             // return newString;
-            return string.Concat(str.Select(n => new string(n, int.Parse(n.ToString()))));
         }
     }
 }
+
+
 
 
 // * Create a controller for explosion
